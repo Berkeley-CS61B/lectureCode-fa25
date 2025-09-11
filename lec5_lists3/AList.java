@@ -43,7 +43,7 @@ public class AList {
     // size: 3
     // contents: [6, 3, 9, -, -, -, -, ...]
     public int removeLast() {
-        int valueToReturn = contents[size - 1];
+        int valueToReturn = getLast();
         // contents[size - 1] = 0; (purist or not, monk decisions)
         size = size - 1;
         return valueToReturn;
