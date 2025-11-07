@@ -111,7 +111,27 @@ public class TERenderer {
      * if you changed the pen settings.
      */
     public void resetFont() {
-        Font font = new Font("Monaco", Font.BOLD, TILE_SIZE - 2);
-        StdDraw.setFont(font);
+        StdDraw.setFont(selectPlatformFont(TILE_SIZE+1));
+    }
+
+    /**
+     * Use a font with tighter symbol metrics on macOS to reduce excess
+     * whitespace around Unicode glyphs (e.g., suit symbols like \u2660).
+     * Falls back to a logical monospaced font on other platforms.
+     */
+    private Font selectPlatformFont(int size) {
+        String os = System.getProperty("os.name", "").toLowerCase();
+        if (os.contains("mac")) {
+            Font menlo = new Font("Menlo", Font.BOLD, size);
+            if (menlo.canDisplay('\u2660')) { // '♠'
+                return menlo;
+            }
+            // Monaco as a secondary option
+            Font monaco = new Font("Monaco", Font.BOLD, size);
+            if (monaco.canDisplay('\u2660')) {
+                return monaco;
+            }
+        }
+        return new Font("Monospaced", Font.BOLD, size);
     }
 }
