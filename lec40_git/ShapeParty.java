@@ -138,7 +138,7 @@ public class ShapeParty extends JPanel implements ActionListener {
         List<PartyShape> plugins = new ArrayList<>();
         
         // 1. Add the built-in default
-        plugins.add(new DefaultSquare());
+        plugins.add(new Square());
 
         // 2. Scan for external Student implementations
         try {
@@ -165,7 +165,7 @@ public class ShapeParty extends JPanel implements ActionListener {
                                 
                                 // Avoid re-adding the internal Main/Default classes if they appear in scan
                                 if (cls.getName().equals(ShapeParty.class.getName()) || 
-                                    cls.getName().equals(DefaultSquare.class.getName())) {
+                                    cls.getName().equals(Square.class.getName())) {
                                     continue;
                                 }
 

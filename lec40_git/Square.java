@@ -1,7 +1,8 @@
 import java.awt.Color;
 
 // This acts as the "default" shape so the screen isn't empty.
-public class DefaultSquare implements PartyShape {
+public class Square implements PartyShape {
+
     public void draw(Turtle t) {
         t.setColor(Color.CYAN);
         // Draw a square using primitive turtle moves
