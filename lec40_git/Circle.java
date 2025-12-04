@@ -5,12 +5,12 @@ public class Circle implements PartyShape {
     @Override
     public void draw(Turtle t) {
         // TODO: Change this color!
-        t.setColor(Color.BLUE);
+        t.setColor(Color.RED);
 
         // Draw a circle
-        for (int i = 0; i < 36; i++) {
-            t.forward(5);
-            t.turnRight(10);
+        for (int i = 0; i < 300; i++) {
+            t.forward(10);
+            t.turnRight(20);
         }
     }
 }
