@@ -1,6 +1,6 @@
 import java.awt.Color;
 
-public class Star implements PartyShape {
+public class SuperStar implements PartyShape {
     public void draw(Turtle t) {
         // TODO: Change this color to your favorite!
         int red = 255;
