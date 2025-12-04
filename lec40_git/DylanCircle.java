@@ -9,7 +9,7 @@ public class Circle implements PartyShape {
 
         // Draw a circle
         for (int i = 0; i < 36; i++) {
-            t.forward(5);
+            t.forward(45);
             t.turnRight(10);
         }
     }
