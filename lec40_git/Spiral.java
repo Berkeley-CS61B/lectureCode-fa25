@@ -10,12 +10,12 @@ public class Spiral implements PartyShape {
     @Override
     public void draw(Turtle t) {
         t.setColor(Color.BLUE);
+        double step = 0.2;
 
-        int step = 1;
         for (int i = 0; i < 200; i++) {
             t.forward(step);
             t.turnRight(10);
-            step += 1;                  
+            step += 0.2;
         }
     }
 }
